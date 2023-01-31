@@ -1,0 +1,41 @@
+{
+	"name": "algolia-indexer",
+	"version": "0.0.1",
+	"description": "Loads data from files and indexes it into Algolia. Useful for statically built sites made with Astro, Gatsby or any static site generator based on Markdown files.",
+	"main": "index.js",
+	"author": "Abdelilah Sawab",
+	"repository": "https://github.com/abdelilah/algolia-indexer",
+	"scripts": {
+		"start": "tsc -w",
+		"lint": "eslint --ext .ts src",
+		"build": "npm run lint && tsc",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepublishOnly": "npm run build",
+		"preversion": "npm run build",
+		"version": "git add -A dist && git commit -m \"build(dist): v$npm_package_version\""
+	},
+	"bin": "./dist/index.js",
+	"files": [
+		"dist"
+	],
+	"keywords": [],
+	"license": "ISC",
+	"devDependencies": {
+		"@types/glob": "^8.0.1",
+		"@typescript-eslint/eslint-plugin": "^5.50.0",
+		"@typescript-eslint/parser": "^5.50.0",
+		"eslint": "^8.33.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.27.5",
+		"typescript": "^4.9.5"
+	},
+	"dependencies": {
+		"@types/node": "^18.11.18",
+		"algoliasearch": "^4.14.3",
+		"colors": "^1.4.0",
+		"commander": "^10.0.0",
+		"dotenv": "^16.0.3",
+		"glob": "^8.1.0",
+		"gray-matter": "^4.0.3"
+	}
+}
